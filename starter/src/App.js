@@ -1,9 +1,21 @@
 import "./App.css";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { ChangeSection } from "./changeSection";
+import * as BooksAPI from "./BooksAPI";
 
 function App() {
   const [showSearchPage, setShowSearchpage] = useState(false);
+
+  const [books, setBooks] = useState([])
+
+  useEffect(() => {
+    const getBooks = async () => {
+      const res = await BooksAPI.getAll();
+      setBooks(res)
+    };
+
+    getBooks();
+  })
 
   return (
     <div className="app">
