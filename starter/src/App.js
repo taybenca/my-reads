@@ -1,7 +1,8 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { ChangeSection } from "./changeSection";
+import { ChangeSection } from "./components/ChangeSection";
 import * as BooksAPI from "./BooksAPI";
+import { Title } from "./components/Title";
 
 function App() {
   const [showSearchPage, setShowSearchpage] = useState(false);
@@ -9,13 +10,9 @@ function App() {
   const [books, setBooks] = useState([])
 
   useEffect(() => {
-    const getBooks = async () => {
-      const res = await BooksAPI.getAll();
-      setBooks(res)
-    };
-
-    getBooks();
-  })
+    BooksAPI.getAll()
+    .then(data => console.log("data:", data))
+  }, [])
 
   return (
     <div className="app">
@@ -41,12 +38,7 @@ function App() {
         </div>
       ) : (
         <div className="list-books">
-          <div className="list-books-title">
-            <h1>MyReads</h1>
-            <div className="test">
-              books:
-            </div>
-          </div>
+          <Title />
           <div className="list-books-content">
             <div>
               <div className="bookshelf">
