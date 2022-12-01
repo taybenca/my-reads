@@ -9,7 +9,7 @@ function App() {
   const [showSearchPage, setShowSearchpage] = useState(false);
 
   const [books, setBooks] = useState([])
-
+  // getting all the books from API
   useEffect(() => {
     BooksAPI.getAll()
     .then(data => setBooks(data))
@@ -24,8 +24,8 @@ function App() {
       return eachBook
     })
     setBooks(updatedBooks)
+    // update the books in the backend to make sure they will still there when refresh the page
     BooksAPI.update(book, newShelf)
-    .then(data => console.log(data))
   }
    
   return (

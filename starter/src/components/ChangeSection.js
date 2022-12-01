@@ -1,7 +1,7 @@
 export const ChangeSection = ({ book, onChangeShelf }) => {
-    
     return (
         <div className="book-shelf-changer">
+            {/* the shelf will change after the new shelf is selected */}
             <select 
             defaultValue={book.shelf} 
             onChange={(event) => onChangeShelf(book, event.target.value)}

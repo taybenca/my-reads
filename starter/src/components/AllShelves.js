@@ -1,6 +1,7 @@
 import { EachShelf } from './EachShelf'
 
-export const AllShelves = ( {books, onChangeShelf} ) => {
+export const AllShelves = ({ books, onChangeShelf }) => {
+    // the shelves will filter the books that has the corresponding shelf
     const currentlyReading = books.filter(
         (book) => (book.shelf === "currentlyReading")
     )
@@ -15,9 +16,18 @@ export const AllShelves = ( {books, onChangeShelf} ) => {
 
     return (
         <div>
-            <EachShelf title='Currently Reading' books={currentlyReading} onChangeShelf={onChangeShelf} />
-            <EachShelf title='Want to Read' books={wantToRead} onChangeShelf={onChangeShelf}/>
-            <EachShelf title='Read' books={read} onChangeShelf={onChangeShelf} />
+            <EachShelf title='Currently Reading' 
+                books={currentlyReading} 
+                onChangeShelf={onChangeShelf} 
+            />
+            <EachShelf title='Want to Read' 
+                books={wantToRead} 
+                onChangeShelf={onChangeShelf}
+            />
+            <EachShelf title='Read' 
+                books={read} 
+                onChangeShelf={onChangeShelf}
+            />
         </div>
     )
 }
