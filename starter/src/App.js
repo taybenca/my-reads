@@ -1,9 +1,7 @@
 import "./App.css";
 import { useEffect, useState } from "react";
-import { ChangeSection } from "./components/ChangeSection";
 import * as BooksAPI from "./BooksAPI";
 import { Title } from "./components/Title";
-import { EachShelf } from "./components/EachShelf";
 import { AllShelves } from "./components/AllShelves";
 
 function App() {
@@ -26,10 +24,10 @@ function App() {
       return eachBook
     })
     setBooks(updatedBooks)
+    BooksAPI.update(book, newShelf)
+    .then(data => console.log(data))
   }
    
-  
-
   return (
     <div className="app">
       {showSearchPage ? (
