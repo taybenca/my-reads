@@ -9,7 +9,7 @@ export const Book = ({ book, onChangeShelf }) => {
                     width: 128,
                     height: 193,
                     backgroundImage:
-                    `url(${book.imageLinks.smallThumbnail})`,
+                    `url(${book.imageLinks.thumbnail})`
                 }}
                 >
                 </div>
