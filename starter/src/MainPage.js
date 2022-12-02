@@ -18,3 +18,8 @@ export const MainPage = ({ onChangeShelf, books }) => {
         </div>
     )
 }
+
+MainPage.propTypes = {
+    onChangeShelf: PropTypes.func.isRequired,
+    books: PropTypes.array.isRequired,
+}
