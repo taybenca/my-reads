@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { EachShelf } from './EachShelf'
 
 export const AllShelves = ({ books, onChangeShelf }) => {
@@ -30,4 +31,9 @@ export const AllShelves = ({ books, onChangeShelf }) => {
             />
         </div>
     )
+}
+
+AllShelves.propTypes = {
+    onChangeShelf: PropTypes.func.isRequired,
+    books: PropTypes.array.isRequired,
 }

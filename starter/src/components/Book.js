@@ -1,4 +1,6 @@
+import PropTypes from "prop-types";
 import { ChangeSection } from "./ChangeSection"
+
 export const Book = ({ book, onChangeShelf }) => {
     return (
         <div className="book">
@@ -19,4 +21,9 @@ export const Book = ({ book, onChangeShelf }) => {
             <div className="book-authors">{book.authors}</div>
         </div>
     )
+}
+
+Book.propTypes = {
+    onChangeShelf: PropTypes.func.isRequired,
+    book: PropTypes.object.isRequired,
 }
