@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import { Link } from "react-router-dom"
 import { Book } from "./components/Book"
 
@@ -31,4 +32,11 @@ export const SearchPage = ({ searchBooks, onChangeShelf, updateQuery, query }) =
             </div>
         </div>
     )
+}
+
+SearchPage.propTypes = {
+    onChangeShelf: PropTypes.func.isRequired,
+    searchBooks: PropTypes.array.isRequired,
+    updateQuery: PropTypes.func.isRequired,
+    query: PropTypes.string.isRequired,
 }
