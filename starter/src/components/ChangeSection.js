@@ -3,7 +3,7 @@ export const ChangeSection = ({ book, onChangeShelf }) => {
         <div className="book-shelf-changer">
             {/* the shelf will change after the new shelf is selected */}
             <select 
-            defaultValue={book.shelf} 
+            defaultValue={book.shelf ? book.shelf : "none"} 
             onChange={(event) => onChangeShelf(book, event.target.value)}
             >
                 <option value="none" disabled> Move to... </option>

@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import { Link } from "react-router-dom"
 import { Book } from "./components/Book"
 
-export const SearchPage = ({ searchBooks, onChangeShelf, updateQuery, query }) => {
+export const SearchPage = ({ mergedBooks, onChangeShelf, updateQuery, query }) => {
     return (
         <div className="app">
             <div className="search-books">
@@ -21,7 +21,7 @@ export const SearchPage = ({ searchBooks, onChangeShelf, updateQuery, query }) =
                 </div>
                 <div className="search-books-results">
                     <ol className="books-grid">
-                        {searchBooks.map(eachBook => (
+                        {mergedBooks.map(eachBook => (
                         // add unique key for each book
                         <li key={eachBook.id}>
                             <Book book={eachBook} onChangeShelf={onChangeShelf}/>
@@ -36,7 +36,7 @@ export const SearchPage = ({ searchBooks, onChangeShelf, updateQuery, query }) =
 
 SearchPage.propTypes = {
     onChangeShelf: PropTypes.func.isRequired,
-    searchBooks: PropTypes.array.isRequired,
+    mergedBooks: PropTypes.array.isRequired,
     updateQuery: PropTypes.func.isRequired,
     query: PropTypes.string.isRequired,
 }
