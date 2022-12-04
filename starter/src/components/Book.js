@@ -6,7 +6,7 @@ export const Book = ({ book, onChangeShelf }) => {
         <div className="book">
             <div className="book-top">
             {
-                book.imageLinks.thumbnail ? 
+                book.imageLinks ? 
                    <div
                     className="book-cover"
                     style={{
