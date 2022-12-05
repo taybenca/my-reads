@@ -49,7 +49,7 @@ To simplify your development process, we've provided a backend server for you to
 Method Signature:
 
 ```js
-getAll();
+getAll()
 ```
 
 - Returns a Promise which resolves to a JSON object containing a collection of book objects.
